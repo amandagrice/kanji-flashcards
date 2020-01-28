@@ -15,7 +15,7 @@ window.onload = function() {
                 }
                 setCard();
             };
-            reader.readAsBinaryString(fileInput.files[0]);
+            reader.readAsText(fileInput.files[0]);
         };
 
     fileInput.addEventListener('change', readFile);
