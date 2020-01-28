@@ -1,0 +1,45 @@
+html {
+    background-color: #2C4251;
+    color: white;
+}
+
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.side {
+    border: 5px solid transparent;
+    height: 150px;
+    width: 50%;
+    margin: 3% auto;
+    background-color: #D16666;
+    font-size: 20px;
+    color: black;
+}
+
+.side div {
+    font-size: 100px;
+    text-align: center;
+    color: black;
+
+}
+
+.side:hover {
+    border: 5px solid white;
+}
+
+.button {
+    color: white;
+    padding: 15px 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #008CBA;
+    border: 5px solid transparent;
+    margin: 0 auto;
+    display: block;
+}
+
+.button:hover {
+    border: 5px solid white;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flashcards</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <div id="main">
+        <input type="file" id="file-input">
+        <div class="side" onclick="flip('side-one')">
+            <span id="header-one">Side One</span>
+            <div id="side-one"></div>
+        </div>
+        <div class="side" onclick="flip('side-two')">
+            <span id="header-two">Side Two</span>
+            <div id="side-two"></div>
+        </div>
+        <div class="side" onclick="flip('side-three')">
+            <span id="header-three">Side Three</span>
+            <div id="side-three"></div>
+        </div>
+        <button class="button" onclick="setCard()">Next Card</button>
+    </div>
+</body>
+</html>
