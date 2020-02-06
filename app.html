@@ -8,7 +8,18 @@
 </head>
 <body>
     <div id="main">
-        <input type='file' id="file-input"><br>
+        <input type='file' id="file-input">
+        <p>
+        <label>
+            Start With:
+            <select id="start-with-selector">
+                <option selected="selected" value="any">Any</option>
+                <option id="op-one" value="side-one">Side One</option>
+                <option id="op-two" value="side-two">Side Two</option>
+                <option id="op-three" value="side-three">Side Three</option>
+            </select>
+        </label>
+        </p>
         <div class="side" onclick="flip('side-one')">
             <span id="header-one">Side One</span>
             <div id="side-one"></div>

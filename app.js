@@ -29,9 +29,16 @@ function flip(id) {
 
 function setCard() {
     clearCardView();
-    const sideOptions = ["side-one", "side-two", "side-three"];
-    let startingSide = sideOptions[getRandomInt(3)];
+    let sideOptions = ["side-one", "side-two", "side-three"];
+    const startWithSelector = document.getElementById("start-with-selector");
+    const selected = startWithSelector.options[startWithSelector.selectedIndex].value;
     activeCard = cards[getRandomInt(cards.length)];
+    let startingSide;
+    if (selected !== 'any') {
+        startingSide = selected
+    } else {
+        startingSide = sideOptions[getRandomInt(3)];
+    }
     document.getElementById(startingSide).innerHTML = activeCard[startingSide];
 }
 
@@ -40,6 +47,9 @@ function parseHeaders(headerString) {
     document.getElementById('header-one').innerHTML = headers[0];
     document.getElementById('header-two').innerHTML = headers[1];
     document.getElementById('header-three').innerHTML = headers[2];
+    document.getElementById('op-one').innerHTML = headers[0];
+    document.getElementById('op-two').innerHTML = headers[1];
+    document.getElementById('op-three').innerHTML = headers[2];
 }
 
 function createCard(cardString) {
