@@ -1,19 +1,20 @@
 # Kanji Flashcards
 
-
-<img src="./shrine-pic.jpg" width="500">
-
 ## Website
 
 You can access it here:
 http://threesidedflashcards.s3-website-us-east-1.amazonaws.com/
+
+## Screenshot
+
+<img src="./screenshot.PNG" width="700">
 
 ## Why did I make this?
 
 During college I studied abroad in Japan and enjoyed learning Japanese. Studying could be very frustrating, though. When learning a new word, there were three things you had to learn:
 
     1. The characters (Kanji)
-    2. The hiragana/katakana (pronounciation / simpler writing form)
+    2. The hiragana (pronounciation / simpler writing form)
     3. The meaning (in English)
 
 I also recently started studying Mandarin for fun. Again, three things I must learn for every word:
@@ -30,10 +31,6 @@ With other subjects in school, I always used regular flashcards. But it's much h
 - I wanted the ability to turn off Spaced Repetition. 
 
 I also didn't care about typing in my answers, just the ability to check if I was right. Most apps, if you don't want to have to bother typing in your answer, have to just deal with always answering "wrong" and overriding the app to say you were right. I like to study by writing my answers on a small portable whiteboard and comparing them. Or, if studying on the train, just picturing it in my head and checking the answer. Typing was an extra feature I didn't want, but every app had. 
-
-## Screenshot
-
-<img src="./screenshot.PNG" width="700">
 
 ## Description
 
@@ -60,3 +57,5 @@ This is plain Javascript, HTML, and CSS. It's hosted with AWS S3. Nothing fancy.
 ## Contributing
 
 I don't want any changes to it, but feel free to clone and edit to your heart's desire.
+
+<img src="./shrine-pic.jpg" width="500">
