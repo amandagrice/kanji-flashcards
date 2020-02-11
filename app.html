@@ -7,32 +7,44 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <div id="main">
-        <input type='file' id="file-input">
-        <p>
-        <label>
-            Start With:
-            <select id="start-with-selector">
-                <option selected="selected" value="any">Any</option>
-                <option id="op-one" value="side-one">Side One</option>
-                <option id="op-two" value="side-two">Side Two</option>
-                <option id="op-three" value="side-three">Side Three</option>
-            </select>
-        </label>
-        </p>
+<div id="main">
+    <input type='file' id="file-input">
+    <div class="break"></div>
+    <label>
+        Start With:
+        <select id="start-with-selector">
+            <option selected="selected" value="any">Any</option>
+            <option id="op-one" value="side-one">Side One</option>
+            <option id="op-two" value="side-two">Side Two</option>
+            <option id="op-three" value="side-three">Side Three</option>
+        </select>
+    </label>
+    <div class="break"></div>
+    <label>
+        Track Metrics
+        <input id="metric-checkbox" type="checkbox" checked onclick="showMe()">
+    </label>
+    <div id="card-space">
         <div class="side" onclick="flip('side-one')">
-            <span id="header-one">Side One</span>
+            <span id="header-one" class="header">Side One</span>
             <div id="side-one"></div>
         </div>
         <div class="side" onclick="flip('side-two')">
-            <span id="header-two">Side Two</span>
+            <span id="header-two" class="header">Side Two</span>
             <div id="side-two"></div>
         </div>
         <div class="side" onclick="flip('side-three')">
-            <span id="header-three">Side Three</span>
+            <span id="header-three" class="header">Side Three</span>
             <div id="side-three"></div>
         </div>
-        <button class="button" onclick="setCard()">Next Card</button>
     </div>
+    <div id="user-buttons">
+        <button id="next-card-button" class="button" onclick="setCard()">Next Card</button>
+        <span id="validation-buttons">
+            <button id="correct-button" class="button">Correct</button>
+            <button id="incorrect-button" class="button">Wrong</button>
+        </span>
+    </div>
+</div>
 </body>
 </html>

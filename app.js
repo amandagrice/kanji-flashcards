@@ -54,11 +54,16 @@ function parseHeaders(headerString) {
 
 function createCard(cardString) {
     const sides = cardString.split(',');
-    return {
+    let card = {
         'side-one': sides[0],
         'side-two': sides[1],
         'side-three': sides[2]
+    };
+    if (sides.length >= 5) {
+        card['right'] = sides[3],
+        card['left'] = sides[4]
     }
+    return card;
 }
 
 function getRandomInt(max) {
@@ -69,4 +74,13 @@ function clearCardView() {
     document.getElementById("side-one").innerHTML = "";
     document.getElementById("side-two").innerHTML = "";
     document.getElementById("side-three").innerHTML = "";
+}
+
+function showMe (box) {
+    const checkbox = document.getElementById("metric-checkbox");
+    let display = "none";
+    if (checkbox.checked) {
+        display = "table";
+    }
+    document.getElementById("validation-buttons").style.display = display;
 }
