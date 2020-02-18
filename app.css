@@ -59,7 +59,7 @@ button:hover {
 
 #validation-buttons {
     margin: 20px auto 0;
-    display: table;
+    display: none;
 }
 
 #correct-button {

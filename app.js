@@ -76,11 +76,14 @@ function clearCardView() {
     document.getElementById("side-three").innerHTML = "";
 }
 
-function showMe (box) {
+function showMe () {
     const checkbox = document.getElementById("metric-checkbox");
-    let display = "none";
+    let validationDisplay = "none";
+    let nextCardDisplay = "block";
     if (checkbox.checked) {
-        display = "table";
+        validationDisplay = "table";
+        nextCardDisplay = "none";
     }
-    document.getElementById("validation-buttons").style.display = display;
+    document.getElementById("validation-buttons").style.display = validationDisplay;
+    document.getElementById("next-card-button").style.display = nextCardDisplay;
 }
