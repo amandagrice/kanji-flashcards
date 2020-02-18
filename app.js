@@ -1,6 +1,7 @@
 let csv;
 const cards = [];
 let activeCard;
+let activeCardIndex;
 
 window.onload = function() {
     const fileInput = document.getElementById('file-input'),
@@ -32,7 +33,8 @@ function setCard() {
     let sideOptions = ["side-one", "side-two", "side-three"];
     const startWithSelector = document.getElementById("start-with-selector");
     const selected = startWithSelector.options[startWithSelector.selectedIndex].value;
-    activeCard = cards[getRandomInt(cards.length)];
+    activeCardIndex = getRandomInt(cards.length);
+    activeCard = cards[activeCardIndex];
     let startingSide;
     if (selected !== 'any') {
         startingSide = selected
@@ -60,8 +62,8 @@ function createCard(cardString) {
         'side-three': sides[2]
     };
     if (sides.length >= 5) {
-        card['right'] = sides[3],
-        card['left'] = sides[4]
+        card['right'] = parseInt(sides[3]),
+        card['wrong'] = parseInt(sides[4])
     }
     return card;
 }
@@ -86,4 +88,14 @@ function showMe () {
     }
     document.getElementById("validation-buttons").style.display = validationDisplay;
     document.getElementById("next-card-button").style.display = nextCardDisplay;
+}
+
+function markCorrect() {
+    cards[activeCardIndex]['right'] = cards[activeCardIndex]['right'] + 1;
+    setCard();
+}
+
+function markWrong() {
+    cards[activeCardIndex]['wrong'] = cards[activeCardIndex]['wrong'] + 1;
+    setCard();
 }
