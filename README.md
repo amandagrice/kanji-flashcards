@@ -50,6 +50,11 @@ The app will then reveal that side to the flashcard and the user can click to re
 
 Upon hitting "Next Card" this process will repeat.
 
+If you check the box labeled "Track Metrics" then the app will record how many times you got the card right or wrong.
+You can save your card set with metrics to a new CSV by hitting save.
+
+<img src="./screenshot_with_metrics.PNG" width="700">
+
 ## Development
 
 This is plain Javascript, HTML, and CSS. It's hosted with AWS S3. Nothing fancy.
