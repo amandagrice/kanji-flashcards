@@ -14,6 +14,9 @@ window.onload = function() {
                 for (let i = 1; i < csv.length; i++) {
                     cards.push(createCard(csv[i]));
                 }
+                if (document.getElementById("metric-checkbox").checked && cards.length > 0) {
+                    document.getElementById("save-button").style.display = "block";
+                }
                 setCard();
             };
             reader.readAsText(fileInput.files[0]);
@@ -81,13 +84,18 @@ function clearCardView() {
 function showMe () {
     const checkbox = document.getElementById("metric-checkbox");
     let validationDisplay = "none";
+    let saveButtonDisplay = "none";
     let nextCardDisplay = "block";
     if (checkbox.checked) {
         validationDisplay = "table";
         nextCardDisplay = "none";
+        if (cards.length > 0) {
+            saveButtonDisplay = "block";
+        }
     }
     document.getElementById("validation-buttons").style.display = validationDisplay;
     document.getElementById("next-card-button").style.display = nextCardDisplay;
+    document.getElementById("save-button").style.display = saveButtonDisplay;
 }
 
 function markCorrect() {
@@ -98,4 +106,8 @@ function markCorrect() {
 function markWrong() {
     cards[activeCardIndex]['wrong'] = cards[activeCardIndex]['wrong'] + 1;
     setCard();
+}
+
+function saveFile() {
+    console.log("clicked save file")
 }
