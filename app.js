@@ -66,8 +66,11 @@ function createCard(cardString) {
         'side-three': sides[2]
     };
     if (sides.length >= 5) {
-        card['right'] = parseInt(sides[3]),
-        card['wrong'] = parseInt(sides[4])
+        card['right'] = parseInt(sides[3]);
+        card['wrong'] = parseInt(sides[4]);
+    } else {
+        card['right'] = 0;
+        card['wrong'] = 0;
     }
     return card;
 }
