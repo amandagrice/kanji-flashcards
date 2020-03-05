@@ -2,6 +2,7 @@ let csv;
 const cards = [];
 let activeCard;
 let activeCardIndex;
+let headers;
 
 window.onload = function() {
     const fileInput = document.getElementById('file-input'),
@@ -48,7 +49,7 @@ function setCard() {
 }
 
 function parseHeaders(headerString) {
-    let headers = headerString.split(',');
+    headers = headerString.split(',');
     document.getElementById('header-one').innerHTML = headers[0];
     document.getElementById('header-two').innerHTML = headers[1];
     document.getElementById('header-three').innerHTML = headers[2];
@@ -110,6 +111,7 @@ function markWrong() {
 
 function saveFile() {
     let fileContent = "data:text/csv;charset=utf-8,";
+    fileContent += headers.join(",") + "\r\n";
     cards.forEach(function(card) {
         let row = "";
         Object.keys(card).forEach((key, index) => {
