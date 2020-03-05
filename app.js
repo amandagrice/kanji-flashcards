@@ -109,5 +109,21 @@ function markWrong() {
 }
 
 function saveFile() {
-    console.log("clicked save file")
+    let fileContent = "data:text/csv;charset=utf-8,";
+    cards.forEach(function(card) {
+        let row = "";
+        Object.keys(card).forEach((key, index) => {
+            row += card[key];
+            if (index < 4) {
+                row += ","
+            }
+        });
+        fileContent += row + "\r\n";
+    });
+    let encodedUri = encodeURI(fileContent);
+    let link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "flashcards_metrics.csv");
+    document.body.appendChild(link);
+    link.click();
 }
